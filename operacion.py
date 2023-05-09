@@ -6,9 +6,11 @@ import random
 from models import customer as sqlserver
 from models import inventario as sqlite
 
+#generar un numero aleatorio que funcione como numero de orden.
 def generarnumero():
     return random.randint(1000, 9999999)
 
+#almacena el servicio de cada cliente.
 def servicio(username):
     user = sqlserver.readCustomer(str(username))
     print('Que deseas Tomar?   (Digita el nombre)')
@@ -20,11 +22,13 @@ def servicio(username):
     numeroOrden = str(generarnumero())
     sqlserver.insertOrders(numeroOrden,gaseosa,user[0][0])
     print("Registro almacenado.")
-    print(sqlserver.readOrders(numeroOrden))
-    
+    print("Esta es tu orden: "+sqlserver.readOrders(numeroOrden))
+
+#almacena el registro de un nuevo cliente.
 def registro(name,phone):
     sqlserver.insertCustomer(name,phone)
 
+#valida un cliente, en caso tal de no existir lo crea. Y por ultimo, toma el servicio y lo almacena como orden.
 def start():
     print('Bienvenid@, porfavor identificate')
     username = input()

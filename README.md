@@ -9,6 +9,7 @@ SQLite DB located inside the project, for SQLserver DB open model/customer and m
 -pyodbc
 -sqlite3
 -pydantic
+-jinja
 -random
 -json
 -------------------------------------------------------------------------------------------------------------------------------------------
