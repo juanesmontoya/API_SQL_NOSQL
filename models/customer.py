@@ -2,6 +2,7 @@
 import pyodbc
 
 #Establecer los parametros para la conexion con SQL SERVER
+#parameters. modify to your current sql server settings, connect and run SQLQuery.sql for DB creation.
 server = 'DESKTOP-K50KJKV\MSSQLSERVER01'
 bd = 'users'
 user = 'sa'

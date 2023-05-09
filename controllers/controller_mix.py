@@ -4,8 +4,8 @@ import random
 
 router = APIRouter(prefix="/Orders")
 
-@router.get("/{id}")
-async def getOrders(id):
-    orders = customer.readOrders(id)
+@router.get("/{OrderNumber}")
+async def getOrders(OrderNumber):
+    orders = customer.readOrders(OrderNumber)
     return orders
     
