@@ -15,9 +15,9 @@ async def getCustomers():
     return json_string
 
 #HTTP get petition of one Customer
-@router.get("/{id}")
-async def getCustomer(id):
-    oneCustomer = customer.readCustomer(id)
+@router.get("/{fullname}")
+async def getCustomer(fullname):
+    oneCustomer = customer.readCustomer(fullname)
     jsonCustomer = [tuple(row) for row in oneCustomer]
     json_string = json.dumps(jsonCustomer)
     return json_string

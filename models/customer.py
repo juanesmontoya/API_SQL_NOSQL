@@ -23,8 +23,8 @@ def readCustomers():
     return customers
 
 #Crear funcion para leer un Customer de la base de datos
-def readCustomer(idcustomer):
-    instruction = f"Select * from Customer where Id = {idcustomer};"
+def readCustomer(fullname):
+    instruction = f"Select * from Customer where fullname = '{fullname}';"
     cursor.execute(instruction)
     customer = cursor.fetchall()
     return customer
@@ -57,8 +57,8 @@ def deleteCustomer(id):
 #readCustomers()
 #----------------------------------------------------------------------------------------------------------------------------
 #Crear funcion para leer la tabla Orders de la base de datos
-def readOrders(id):
-    instruction = f"Select * from Orders WHERE CustomerId = {id};"
+def readOrders(orderNumber):
+    instruction = f"Select * from Orders WHERE OrderNumber = '{orderNumber}';"
     cursor.execute(instruction)
     orders = cursor.fetchall()
     return orders
