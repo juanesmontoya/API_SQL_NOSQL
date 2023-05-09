@@ -1,3 +1,7 @@
+#El dueño de la licorera "El guaracheo", lleva un registro manual de lo que consumen sus clientes. Desea realizar un estudio para verificar
+#que productos son los mas vendidos y que clientes son los que mas consumen. Para esto, desea tener un registro de su inventario y sus clientes.
+#Al igual que registrar cada consumo de cada cliente.
+
 import random
 from models import customer as sqlserver
 from models import inventario as sqlite
@@ -19,10 +23,6 @@ def servicio(username):
     print(sqlserver.readOrders(numeroOrden))
     
 def registro(name,phone):
-    print("Cliente no registrado, porfavor digita tu nombre: ")
-    name = input()
-    print("Digita tu numero de telefono: ")
-    phone = input()
     sqlserver.insertCustomer(name,phone)
 
 def start():
@@ -37,7 +37,7 @@ def start():
         print("El usuario no esta registrado")
         print("Digita tu numero de telefono: (Con indicativo, sin espacios ni puntos)")
         phone = input()
-        sqlserver.insertCustomer(username,phone)
+        registro(username,phone)
         servicio(username)
         
 start()
